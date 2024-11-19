@@ -1,4 +1,6 @@
+import io.qameta.allure.Step;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 
 public class MainPage {
 
@@ -11,9 +13,22 @@ public class MainPage {
     //кнопка конструкотор
     private static final By CONSTRUCTOR = By.xpath("//a[@class='AppHeader_header__link__3D_hX AppHeader_header__link_active__1IkJo']");
     //кнопка булки
-    private static final By BUTTON_BUN = By.xpath("");
+    private static final By BUTTON_BUN = By.xpath("//span[@class='text text_type_main-default' and text()='Булки']");
     //кнопка соусы
-    private static final By BUTTON_SOUSES = By.xpath("");
+    private static final By BUTTON_SOUSES = By.xpath("//span[@class='text text_type_main-default' and text()='Соусы']");
     //кнопка начинки
-    private static final By BUTTON_FILLINGS = By.xpath("");
+    private static final By BUTTON_FILLINGS = By.xpath("//span[@class='text text_type_main-default' and text()='Начинки']");
+
+    private final WebDriver driver;
+
+    public MainPage(WebDriver driver) {
+        this.driver = driver;
+    }
+
+
+    public void open() {
+        driver.get(PAGE_URL);
+    }
+
+
 }
