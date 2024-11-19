@@ -2,6 +2,8 @@ import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
+import java.time.Duration;
+
 public class RegistrationPage {
 
     //адрес страницы регистрации
@@ -25,6 +27,13 @@ public class RegistrationPage {
     @Step("Открыем страницу")
     public void open() {
         driver.get(PAGE_URL);
+    }
+
+    @Step("Входим через кнопку войти")
+    public void checkingEnterButton() {
+        driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(25));
+        open();
+        driver.findElement(BUTTON_ENTER).click();
     }
 
 }
