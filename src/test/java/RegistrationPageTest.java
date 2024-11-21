@@ -15,6 +15,16 @@ public class RegistrationPageTest {
         loginPage.userEnter();
     }
 
+    @Test
+    public void successRegistration() {
+        registrationPage.registrationSuccess();
+    }
+
+    @Test
+    public void incorrectPasswordOnRegistration() {
+        registrationPage.registrationWithPasswordLessSixCharacters();
+    }
+
     @After
     public void tearDown() {
         driver.quit();

@@ -1,3 +1,4 @@
+import org.junit.After;
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -20,4 +21,23 @@ public class MainPageTest {
         loginPage.userEnter();
     }
 
+    @Test
+    public void transitionBunInConstructor() {
+        mainPage.checkBunButton();
+    }
+
+    @Test
+    public void transitionSousesInConstructor() {
+        mainPage.checkSousesButton();
+    }
+
+    @Test
+    public void transitionFillingInConstructor() {
+        mainPage.checkFilingsButton();
+    }
+
+    @After
+    public void tearDown() {
+        driver.quit();
+    }
 }
